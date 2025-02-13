@@ -128,11 +128,11 @@ enum pmw3610_attribute {
  */
 
  #ifndef CONFIG_PMW3610_SCALE_X
- #define CONFIG_PMW3610_SCALE_X 1.0
+ #define CONFIG_PMW3610_SCALE_X 10
  #endif
  
  #ifndef CONFIG_PMW3610_SCALE_Y
- #define CONFIG_PMW3610_SCALE_Y 1.0
+ #define CONFIG_PMW3610_SCALE_Y 10
  #endif
  
 #ifdef __cplusplus

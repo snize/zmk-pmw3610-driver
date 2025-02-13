@@ -120,6 +120,21 @@ enum pmw3610_attribute {
 
 };
 
+/* 
+ * Define default scale factors for X and Y axes.
+ * These values are used to correct motion data based on sensor mounting conditions.
+ * If the user does not explicitly set CONFIG_PMW3610_SCALE_X or CONFIG_PMW3610_SCALE_Y 
+ * in the Kconfig configuration, the default value of 1.0 will be applied.
+ */
+
+ #ifndef CONFIG_PMW3610_SCALE_X
+ #define CONFIG_PMW3610_SCALE_X 1.0
+ #endif
+ 
+ #ifndef CONFIG_PMW3610_SCALE_Y
+ #define CONFIG_PMW3610_SCALE_Y 1.0
+ #endif
+ 
 #ifdef __cplusplus
 }
 #endif

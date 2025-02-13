@@ -396,6 +396,10 @@ static int pmw3610_report_data(const struct device *dev) {
     y = -y;
 #endif
 
+/* Apply correction: Multiply motion data by user-defined scale factors (default is 1.0) */
+x = (int16_t)(x * CONFIG_PMW3610_SCALE_X);
+y = (int16_t)(y * CONFIG_PMW3610_SCALE_Y);
+
 #ifdef CONFIG_PMW3610_SMART_ALGORITHM
     int16_t shutter = ((int16_t)(buf[PMW3610_SHUTTER_H_POS] & 0x01) << 8) 
                     + buf[PMW3610_SHUTTER_L_POS];
